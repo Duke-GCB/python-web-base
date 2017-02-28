@@ -10,12 +10,13 @@ RUN apt-get update && apt-get install -y \
 		mysql-client libmysqlclient-dev \
 		postgresql-client libpq-dev \
 		sqlite3 \
+		python-psycopg2 \
 	--no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
-ONBUILD COPY requirements.txt /usr/src/app/
+ONBUILD COPY requirements.txt /app/
 ONBUILD RUN pip install --no-cache-dir -r requirements.txt
 
-ONBUILD COPY . /usr/src/app
+ONBUILD COPY . /app

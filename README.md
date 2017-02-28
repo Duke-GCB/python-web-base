@@ -20,4 +20,4 @@ Build it:
 docker build -t myapp .
 ```
 
-App source code will be placed in `/usr/src/app`
+App source code will be placed in `/app`
