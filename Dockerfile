@@ -5,9 +5,9 @@ ENV TZ=US/Eastern
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt-get install -y \
+    vim \
 		gcc \
 		gettext \
-		mysql-client libmysqlclient-dev \
 		postgresql-client libpq-dev \
 		sqlite3 \
 		python-psycopg2 \
